@@ -1,0 +1,34 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #f2f2f2;
+  font-family: "Helvetica Neue", "Arial", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+header {
+  background-color: #373737;
+  color: white;
+  height: 70px;
+  padding: 15px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+}
+
+header img {
+  height: 40px;
+  margin-bottom: 12px;
+}
+
+@media (max-width: 430px) {
+  header {
+    flex-direction: column;
+    height: auto;
+    align-items: center;
+  }
+}

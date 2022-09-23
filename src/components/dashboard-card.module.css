@@ -1,0 +1,16 @@
+.card {
+  display: inline-block;
+  background: white;
+  padding: 24px;
+}
+
+.card label {
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #666;
+}
+
+.card p {
+  font-size: 18px;
+  color: #000;
+}

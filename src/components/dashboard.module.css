@@ -1,0 +1,91 @@
+.tabWrapper {
+  display: inline-block;
+  position: relative;
+  padding: 24px 24px 0;
+}
+
+.tabWrapper::before,
+.tabWrapper::after {
+  content: "";
+  display: block;
+  height: 30px;
+  width: 1px;
+  background-color: #e7e7e7;
+  position: absolute;
+  left: 25px;
+  top: 30px;
+}
+
+.tabWrapper::after {
+  left: auto;
+  right: 24px;
+}
+
+.tab {
+  text-transform: capitalize;
+  font-size: 14px;
+  height: 40px;
+  width: 200px;
+  border: none;
+  cursor: pointer;
+  background: #f2f2f2;
+  color: #666;
+}
+
+.tab:hover,
+.tab.active {
+  position: relative;
+  border: 1px solid #e7e7e7;
+  background: #f8f8f8;
+  color: #2e2e2e;
+}
+
+.tab:hover::after,
+.tab.active::after {
+  content: "";
+  display: block;
+  height: 2px;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  background: #f8f8f8;
+}
+
+.dashboard {
+  border-top: 1px solid #e7e7e7;
+  background: #f8f8f8;
+  padding: 24px;
+  padding-left: 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.dashboard > * {
+  margin-left: 24px;
+  flex-grow: 1;
+  flex-basis: 0;
+}
+
+@media (max-width: 576px) {
+  .tabWrapper {
+    display: flex;
+  }
+
+  .tab {
+    flex-grow: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard {
+    flex-direction: column;
+  }
+
+  .dashboard > * {
+    margin-top: 24px;
+  }
+}
+
+@media (max-width: 992px) {
+}

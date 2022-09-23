@@ -26,9 +26,9 @@ export default function Dashboard({ group }) {
   }
 
   return (
-    <>
+    <div style={{ display: group ? "block" : "none" }}>
       <div className={styles.tabWrapper}>{tabs}</div>
       <div className={styles.dashboard}>{dashContent}</div>
-    </>
+    </div>
   );
 }

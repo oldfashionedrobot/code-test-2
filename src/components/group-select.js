@@ -40,7 +40,7 @@ export default function GroupSelect({ groups, currentGroup, onSelect }) {
         onFocus={(e) => handleToggle(true)}
         onBlur={(e) => handleToggle(false)}
       >
-        {currentGroup ? currentGroup.label : "Select Group"}
+        <span>{currentGroup ? currentGroup.label : "Select Group"}</span>
         <ul className={styles.selectMenu}>
           <li className={styles.selectLabel}>Change Group</li>
           {items}

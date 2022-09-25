@@ -3,6 +3,14 @@ import styles from "./dashboard-card.module.css";
 export default function DashboardCard({ dataKey, dataObj }) {
   let cardContent;
 
+  if (!dataObj || !dataKey) {
+    return (
+      <div className={styles.card}>
+        <p>No Data</p>
+      </div>
+    );
+  }
+
   switch (dataKey) {
     case "budget":
       cardContent = (

@@ -1,70 +1,31 @@
-# Getting Started with Create React App
+## Syndio Take Home
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This comes with a premade webpack config with all loaders/depencies.
 
-## Available Scripts
+## Scripts
 
-In the project directory, you can run:
+`npm i` or `npm install`: Install the needed dependencies.
 
-### `npm start`
+`npm start`: Run the app with the dev server at `localhost:3000`, should launch it in the browser for you.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+`npm test`: Run the test files, using preconfigured jest that comes with `create react app`
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Components
 
-### `npm test`
+There are 4 components:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- The `app.js` component is the main wrapper for the small app, and handles loading data from the API endpoints.
+- The `dashboard.js` component controls the main dashboard view and the tab navigation functionality.
+- The `dashboard-card.js` component is a simple UI component to render the cards with readable information based on the data provided.
+- The `group-select.js` component is a small custom select UI element to allow for a `<select>` like interaction that is styled with a custom design.
 
-### `npm run build`
+There are also two utility files, `api-helpers.js` for wrapping some `fetch` requests, and a `url-helpers.js` for wrapping some browser URL query parameter functions.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Styles
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Webpack's `css-loader` allows for using the [CSS module](https://github.com/css-modules/css-modules) pattern. I've used that in each of the components to allow for writing component-scoped CSS.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Tests
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+I've written some super basic tests for the components. I'm still learning the `@testing-library` functionality so I probably have written some of the tests in ways that could definilty be improved. I've left off tests for the `app.js` component, as I think I need to read up more on how to properly test React components with asynchronus data loading that changes the DOM.
